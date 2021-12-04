@@ -63,3 +63,6 @@ def get_final_position_with_aim(positions):
 
     final_result = horizontal_position * depth
     return final_result
+
+def get_power_consumption(data):
+    return 0
