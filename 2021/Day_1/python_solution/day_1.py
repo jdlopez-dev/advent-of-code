@@ -11,4 +11,6 @@ with open(inputFile, 'r') as f:
 
 measures = [int(measure.strip()) for measure in measures]
 
-print(ms.get_number_magnifications_measurements(measures))
+print("--- Part One ---", ms.get_number_magnifications_measurements(measures))
+
+print("--- Part Two ---", ms.get_number_magnifications_three_measurements(measures))
