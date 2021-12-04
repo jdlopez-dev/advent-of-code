@@ -1,5 +1,5 @@
 from pathlib import Path
-import measurement_service as ms
+import day_1_service as ms
 
 fileName = 'input.txt'
 path = Path(__file__).parent.parent
