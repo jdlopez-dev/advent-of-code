@@ -1,4 +1,5 @@
 import sys
+from day_1_models import Position
 
 
 def get_number_magnifications_measurements(measures):
@@ -22,3 +23,20 @@ def get_number_magnifications_three_measurements(measures):
                 measurement_counter += 1
             previous_measurement = current_measure
     return measurement_counter
+
+
+def get_final_position(positions):
+
+    horizontal_position = 0
+    depth = 0
+
+    for position in positions:
+        if(Position.forward.name in position):
+            horizontal_position += int(position.split()[1])
+        elif(Position.down.name in position):
+            depth += int(position.split()[1])
+        elif(Position.up.name in position):
+            depth -= int(position.split()[1])
+
+    final_result = horizontal_position * depth
+    return final_result
