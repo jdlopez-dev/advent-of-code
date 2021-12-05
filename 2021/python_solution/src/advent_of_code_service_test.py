@@ -41,11 +41,7 @@ class AdventOfCodeServiceTest(unittest.TestCase):
 
         self.assertEqual(final_result, 900)
 
-    def test_binary_to_decimal(self):
-        result = ms.binary_to_decimal(self.binary_numbers)
-        self.assertEqual(result, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
-
-    def test_binary(self):
+    def test_power_consumption(self):
         power_consumption = ms.get_power_consumption(self.binary_numbers)
         self.assertEqual(power_consumption, 198)
 

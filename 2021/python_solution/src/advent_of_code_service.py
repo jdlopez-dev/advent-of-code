@@ -1,5 +1,6 @@
 import sys
 from advent_of_code_models import Position
+from collections import Counter
 
 
 def get_number_magnifications_measurements(data):
@@ -64,5 +65,30 @@ def get_final_position_with_aim(positions):
     final_result = horizontal_position * depth
     return final_result
 
+
 def get_power_consumption(data):
-    return 0
+    gamma_rate = 0
+    epsilon_rate = 0
+    inverse_binary_numbers = []
+
+    for binary_number_index in range(0, len(data)):
+        binary_number_split = list(data[binary_number_index].strip())
+        for i in range(0, len(binary_number_split)):
+            if(i < len(inverse_binary_numbers)):
+                inverse_binary_numbers[i] += binary_number_split[i]
+            else:
+                inverse_binary_numbers.append(binary_number_split[i])
+
+    temp_epsilon_rate = ''
+    temp_gamma_rate = ''
+
+    for i in range(0, len(inverse_binary_numbers)):
+        list_counter = Counter(list(inverse_binary_numbers[i]))
+
+        temp_epsilon_rate += list_counter.most_common()[0][0]
+        temp_gamma_rate += list_counter.most_common()[1][0]
+
+    gamma_rate = int(temp_gamma_rate, 2)
+    epsilon_rate = int(temp_epsilon_rate, 2)
+
+    return gamma_rate * epsilon_rate
