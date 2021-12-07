@@ -1,2 +1,1 @@
-# [https://adventofcode.com/](advent-of-code)
-
+Repository to store my adventofcode solutions
